@@ -15,9 +15,9 @@ I do not own the fonts included in this installer. Each font has its
 own license, which can be found in its respective repository on the
 [[https://github.com/ryanoasis/nerd-fonts][Nerd Fonts GitHub page]].
 
-You **OUGHT TO** select the fonts you agree with the licensing and
-comment the ones you don't before downloading, as this is just a
-utility to facilitate installation.
+~PLEASE~ select the fonts you agree with the licensing and comment the
+ones you don't before downloading, as this is just a utility to
+facilitate installation.
 
 *** Dependencies
 

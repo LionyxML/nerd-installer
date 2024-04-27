@@ -5,13 +5,15 @@ Fonts]]. Nerd Fonts is a collection of over 50 patched fonts,
 providing additional glyphs and icons for popular coding and
 development tools.
 
+This is aimed to work with Linux and MacOS.
+
 For more information about Nerd Fonts and to explore the available
 fonts, visit [[https://www.nerdfonts.com/][nerdfonts.com]].
 
 
 *** Disclaimer
 
-I do not own the fonts included in this installer. Each font has its
+I do not own the fonts fetched by this installer. Each font has its
 own license, which can be found in its respective repository on the
 [[https://github.com/ryanoasis/nerd-fonts][Nerd Fonts GitHub page]].
 

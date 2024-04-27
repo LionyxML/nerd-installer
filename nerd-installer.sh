@@ -3,7 +3,7 @@
 ################################################################################
 #                                                                              #
 #  nerd-installer.sh - Install the entire Nerd Fonts collection effortlessly   #
-#  Version: 0.1.0                                                              #
+#  Version: 0.1.1                                                              #
 #                                                                              #
 #  Copyright (C) 2024 Rahul M. Juliato <rahul.juliato@gmail.com>               #
 #                                                                              #
@@ -24,7 +24,15 @@
 
 
 nerd_fonts_release_version='3.2.1'
-fonts_dir="${HOME}/.local/share/fonts"
+
+if [[ "$(uname)" == "Linux" ]]; then
+    fonts_dir="${HOME}/.local/share/fonts"
+elif [[ "$(uname)" == "Darwin" ]]; then
+    fonts_dir="${HOME}/Library/Fonts"
+else
+    echo "Unsupported operating system."
+    exit 1
+fi
 
 declare -a fonts=(
     0xProto

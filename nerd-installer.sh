@@ -3,7 +3,7 @@
 ################################################################################
 #                                                                              #
 #  nerd-installer.sh - Install the entire Nerd Fonts collection effortlessly   #
-#  Version: 0.1.1                                                              #
+#  Version: 3.3.0                                                              #
 #                                                                              #
 #  Copyright (C) 2024 Rahul M. Juliato <rahul.juliato@gmail.com>               #
 #                                                                              #
@@ -23,7 +23,7 @@
 ################################################################################
 
 
-nerd_fonts_release_version='3.2.1'
+nerd_fonts_release_version='3.3.0'
 
 if [[ "$(uname)" == "Linux" ]]; then
     fonts_dir="${HOME}/.local/share/fonts"
@@ -36,6 +36,7 @@ fi
 
 declare -a fonts=(
     0xProto
+    3270
     Agave
     AnonymousPro
     Arimo
@@ -51,6 +52,7 @@ declare -a fonts=(
     D2Coding
     DaddyTimeMono
     DejaVuSansMono
+    DepartureMono
     DroidSansMono
     EnvyCodeR
     FantasqueSansMono

@@ -3,9 +3,7 @@
 ################################################################################
 #                                                                              #
 #  nerd-installer.sh - Install the entire Nerd Fonts collection effortlessly   #
-#  Version: 3.3.0                                                              #
-#                                                                              #
-#  Copyright (C) 2024 Rahul M. Juliato <rahul.juliato@gmail.com>               #
+#  Version: 3.4.0                                                              #
 #                                                                              #
 #  This program is free software: you can redistribute it and/or modify        #
 #  it under the terms of the GNU General Public License as published by        #
@@ -23,90 +21,90 @@
 ################################################################################
 
 
-nerd_fonts_release_version='3.3.0'
+nerd_fonts_release_version='3.4.0'
 
 if [[ "$(uname)" == "Linux" ]]; then
-    fonts_dir="${HOME}/.local/share/fonts"
+	fonts_dir="${HOME}/.local/share/fonts"
 elif [[ "$(uname)" == "Darwin" ]]; then
-    fonts_dir="${HOME}/Library/Fonts"
+	fonts_dir="${HOME}/Library/Fonts"
 else
-    echo "Unsupported operating system."
-    exit 1
+	echo "Unsupported operating system."
+	exit 1
 fi
 
 declare -a fonts=(
-    0xProto
-    3270
-    Agave
-    AnonymousPro
-    Arimo
-    AurulentSansMono
-    BigBlueTerminal
-    BitstreamVeraSansMono
-    CascadiaCode
-    CascadiaMono
-    CodeNewRoman
-    ComicShannsMono
-    CommitMono
-    Cousine
-    D2Coding
-    DaddyTimeMono
-    DejaVuSansMono
-    DepartureMono
-    DroidSansMono
-    EnvyCodeR
-    FantasqueSansMono
-    FiraCode
-    FiraMono
-    GeistMono
-    Go-Mono
-    Gohu
-    Hack
-    Hasklig
-    HeavyData
-    Hermit
-    IBMPlexMono
-    Inconsolata
-    InconsolataGo
-    InconsolataLGC
-    IntelOneMono
-    Iosevka
-    IosevkaTerm
-    IosevkaTermSlab
-    JetBrainsMono
-    Lekton
-    LiberationMono
-    Lilex
-    MPlus
-    MartianMono
-    Meslo
-    Monaspace
-    Monofur
-    Monoid
-    Mononoki
-    NerdFontsSymbolsOnly
-    # Noto
-    OpenDyslexic
-    Overpass
-    ProFont
-    ProggyClean
-    Recursive
-    RobotoMono
-    ShareTechMono
-    SourceCodePro
-    SpaceMono
-    Terminus
-    Tinos
-    Ubuntu
-    UbuntuMono
-    UbuntuSans
-    VictorMono
-    ZedMono
-    iA-Writer
+	0xProto
+	3270
+	Agave
+	AnonymousPro
+	Arimo
+	AurulentSansMono
+	BigBlueTerminal
+	BitstreamVeraSansMono
+	CascadiaCode
+	CascadiaMono
+	CodeNewRoman
+	ComicShannsMono
+	CommitMono
+	Cousine
+	D2Coding
+	DaddyTimeMono
+	DejaVuSansMono
+	DepartureMono
+	DroidSansMono
+	EnvyCodeR
+	FantasqueSansMono
+	FiraCode
+	FiraMono
+	GeistMono
+	Go-Mono
+	Gohu
+	Hack
+	Hasklig
+	HeavyData
+	Hermit
+	IBMPlexMono
+	Inconsolata
+	InconsolataGo
+	InconsolataLGC
+	IntelOneMono
+	Iosevka
+	IosevkaTerm
+	IosevkaTermSlab
+	JetBrainsMono
+	Lekton
+	LiberationMono
+	Lilex
+	MPlus
+	MartianMono
+	Meslo
+	Monaspace
+	Monofur
+	Monoid
+	Mononoki
+	NerdFontsSymbolsOnly
+	# Noto
+	OpenDyslexic
+	Overpass
+	ProFont
+	ProggyClean
+	Recursive
+	RobotoMono
+	ShareTechMono
+	SourceCodePro
+	SpaceMono
+	Terminus
+	Tinos
+	Ubuntu
+	UbuntuMono
+	UbuntuSans
+	VictorMono
+	ZedMono
+	iA-Writer
 )
 
 if [[ ! -d "$fonts_dir" ]]; then
-    mkdir -p "$fonts_dir"
+	mkdir -p "$fonts_dir"
 fi
 
 printf "\n    -------------------------"
@@ -122,13 +120,13 @@ printf "\n\n    Press ENTER to install, C-c to abort.\n\n"
 read
 
 for font in "${fonts[@]}"; do
-    ((count++))
-    zip_file="${font}.zip"
-    download_url="https://github.com/ryanoasis/nerd-fonts/releases/download/v${nerd_fonts_release_version}/${zip_file}"
-    printf ">>> Downloading and installing $count: ${font}...\n"
-    wget -q "$download_url"
-    unzip -o -qq "$zip_file" -d "$fonts_dir"
-    rm "$zip_file"
+	((count++))
+	zip_file="${font}.zip"
+	download_url="https://github.com/ryanoasis/nerd-fonts/releases/download/v${nerd_fonts_release_version}/${zip_file}"
+	printf ">>> Downloading and installing $count: ${font}...\n"
+	wget -q "$download_url"
+	unzip -o -qq "$zip_file" -d "$fonts_dir"
+	rm "$zip_file"
 done
 
 find "$fonts_dir" -name '*Windows Compatible*' -delete
